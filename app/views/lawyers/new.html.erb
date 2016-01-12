@@ -1,0 +1,79 @@
+<div class="Sign_Form">
+
+	<h1> Sign Up </h1>
+
+<%= form_for :lawyer do |f| %>
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :email_id %>
+		<%= f.text_field :email_id %>
+	</p>
+	
+	<p>
+		<%= f.label :college_name %>
+		<%= f.text_field :college_name %>
+	</p>
+
+
+	<p>
+		<%= f.label :qualification %>
+		<%= f.text_field :qualification %>
+	</p>
+
+
+	<p>
+		<%= f.label :gender %>
+		<%= f.text_field :gender %>
+	</p>
+
+	<p>
+		<%= f.label :dob %>
+		<%= f.text_field :dob %>
+	</p>
+	
+	<p>
+		<%= f.label :experience %>
+		<%= f.text_field :experience %>
+	</p>
+
+
+	<p>
+		<%= f.label :mobile_no %>
+		<%= f.text_field :mobile_no %>
+	</p>
+
+
+	<p>
+		<%= f.label :username %>
+		<%= f.text_field :username %>
+	</p>
+
+	<p>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+	</p>
+
+	<p>
+		<%= f.label :retype_password %>
+		<%= f.password_field :retype_password %>
+	</p>
+	
+	<p>
+		<%= f.submit 'Sign Up'  %>
+	</p>
+<% end %>
+
+	<% if false %>	
+	<% if @lawyer.error.any? %>
+		<ul class = "Signup_Error">
+			<% for message_error in @lawyer.errors.full_messages %>
+				<li> <%= message_error %> </li>
+			<% end %>
+		</ul>
+	<% end %>
+	<% end %>
+</div>

@@ -1,0 +1,63 @@
+<h1> Sign Up </h1>
+
+<%= form_for :lawyer do |f| %>
+	<p>
+		<%= f.label :Name %>
+		<%= f.text_field :Name %>
+	</p>
+
+	<p>
+		<%= f.label :Email ID %>
+		<%= f.text_field :Email ID %>
+	</p>
+	
+	<p>
+		<%= f.label :College Name %>
+		<%= f.text_field :College Name %>
+	</p>
+
+
+	<p>
+		<%= f.label :Qualification %>
+		<%= f.text_field :Qualification %>
+	</p>
+
+
+	<p>
+		<%= f.label :Gender %>
+		<%= f.text_field :Gender %>
+	</p>
+
+	<p>
+		<%= f.label :DOB %> <p>(Format DDMMYYYY) </p> <br>
+		<%= f.text_field :DOB %>
+	</p>
+	
+	<p>
+		<%= f.label :Experience %>
+		<%= f.text_field :Experience %>
+	</p>
+
+
+	<p>
+		<%= f.label :MobileNo. %>
+		<%= f.text_field :MobileNo. %>
+	</p>
+
+
+	<p>
+		<%= f.label :UserName %>
+		<%= f.text_field :UserName %>
+	</p>
+
+	<p>
+		<%= f.label :Password %>
+		<%= f.password_field :Password %>
+	</p>
+
+	<p>
+		<%= f.label :Retype Password %>
+		<%= f.password_field :Retype Password %>
+	</p>
+
+<% end %>
