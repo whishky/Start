@@ -1,0 +1,17 @@
+<h1>Login</h1>
+<%= form_for(:session, url: login_path) do |f| %>
+	<%= f.label :email_id %>
+	<%= f.email_field :email_id %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+	
+	<%= f.label :remember_me do %>
+		<%= f.check_box :remember_me %>
+		<span>Remember me on this computer</span>
+	<% end %>
+	<%= f.submit "I am Lawyer" %>
+<%end %>
+
+<% if false %> <p>New User? <%= link_to "Sign Up as Lawyer", signup_path %> </p> <% end %>
+

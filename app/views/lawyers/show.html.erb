@@ -1,42 +1,57 @@
-<div class="Nya Bnda">
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html, body {
+	height: 100%;      
+	margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
 
-	<h1> New lawyer </h1>
+	    <p>
+	    	<strong>Qulaification
 
-	<p>
-		<strong>Name</strong>
-		<%= @lawyer.name %>
-	</p>
+            <p>
+                <strong> Gender </strong>
+                <%= @lawyer.gender %>
+            </p>
 
-	<p>
-		<strong>Email ID</strong>
-		<%= @lawyer.email_id %>
-	</p>
-	
-	<p>
-		<strong> College_Name </strong>
-		<%= @lawyer.college_name %>
-	</p>
+       	     <p>
+                <strong> DOB_Format_DDMMYYYY </strong>
+                <%= @lawyer.dob %>
+            </p>
 
-
-	<p>
-		<strong> Qualification </strong>
-		<%= @lawyer.qualification %>
-	</p>
-
-
-	<p>
-		<strong> Gender </strong>
-		<%= @lawyer.gender %>
-	</p>
-
-	<p>
-		<strong> DOB_Format_DDMMYYYY </strong>
-		<%= @lawyer.dob %>
-	</p>
-	
-	<p>
-		<strong> Experience </strong>
-		<%= @lawyer.experience %>
-	</p>
+       	     <p>
+                <strong> Experience </strong>
+                <%= @lawyer.experience %>
+             </p>
 
 
+  	      <p> 
+    		<% if logged_in? %>
+      		<strong> <%= link_to "Log out", logout_path, method: :delete %> </strong>
+    		<% end %>
+  	      </p>
+
+    		<div id="map"></div>
+    		<script>
+      		var map;
+      		function initMap() {
+        		map = new google.maps.Map(document.getElementById('map'), {
+          		center: {lat: -34.397, lng: 150.644},
+          		zoom: 8
+        		});
+      		}
+    		</script>
+    		
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYORiIJ5dRKf2kThquSzgcaaLd57S9TEc&&callback=initMap"
+    		async defer></script>
+
+  	</body>	
+</html>

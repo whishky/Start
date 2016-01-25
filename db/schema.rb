@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160108084419) do
+ActiveRecord::Schema.define(version: 20160114080709) do
 
   create_table "lawyers", force: :cascade do |t|
     t.string   "name"
@@ -23,10 +23,12 @@ ActiveRecord::Schema.define(version: 20160108084419) do
     t.string   "experience"
     t.string   "mobile_no"
     t.string   "username"
-    t.string   "password"
-    t.string   "retype_password"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "password_digest"
+    t.string   "remember_digest"
   end
+
+  add_index "lawyers", ["email_id"], name: "index_lawyers_on_email_id", unique: true
 
 end
