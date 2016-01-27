@@ -1,0 +1,57 @@
+<%= form_for @lawyer do |f| %>
+
+	<p>
+                <%= f.label :name %>
+                <%= f.text_field :name %>
+        </p>
+
+        <p>
+                <%= f.label :email_id %>
+                <%= f.text_field :email_id %>
+        </p>
+
+        <p>
+                <%= f.label :address %>
+                <%= f.text_field :address %>
+        </p>
+
+
+        <p>
+                <%= f.label :college_name %>
+                <%= f.text_field :college_name %>
+        </p>
+
+
+        <p>
+                <%= f.label :qualification %>
+                <%= f.text_field :qualification %>
+        </p>
+
+
+        <p>
+                <%= f.label :gender %>
+                <%= f.text_field :gender %>
+        </p>
+
+        <p>
+                <%= f.label :dob %>
+                <%= f.text_field :dob %>
+        </p>
+
+        <p>
+                <%= f.label :experience %>
+                <%= f.text_field :experience %>
+        </p>
+
+
+        <p>
+                <%= f.label :mobile_no %>
+                <%= f.text_field :mobile_no %>
+        </p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<%end%>
+

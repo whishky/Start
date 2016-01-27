@@ -1,9 +1,17 @@
 class LawyersController < ApplicationController	
+	
+	require 'geokit'
+	include Geokit::Geocoders
+
 	def index
 		render 'new'
 	end
 	
 	def new
+	end
+	
+	def edit
+		@lawyer = Lawyer.find(params[:id])
 	end
 
 	def create
@@ -20,11 +28,34 @@ class LawyersController < ApplicationController
 
 	def show
 		@lawyer = Lawyer.find(params[:id])
+		@loc = MultiGeocoder.geocode(@lawyer.address)
+	end
+	
+	def update
+		@lawyer = Lawyer.find_by_id(params[:id])
+		flg = true
+		params[:lawyer].each do |key, value|
+			if @lawyer.update_attribute(key , value)
+				flg &= true
+			else
+				flg &= false
+			end
+		end
+
+		if flg
+			redirect_to @lawyer
+		else
+			redirect_to 'edit'
+		end
 	end
 
 	private
 
 	def lawyer_params
-		params.require(:lawyer).permit(:name, :email_id, :college_name, :qualification, :gender, :dob, :experience, :mobile_no, :username, :password, :password_confirmation)
+		params.require(:lawyer).permit(:name, :email_id, :address, :college_name, :qualification, :gender, :dob, :experience, :mobile_no, :username, :password, :password_confirmation)
+	end
+
+	def lawyer_edit_params
+		params.require(:lawyer).permit(:name, :email_id, :address, :college_name, :qualification, :gender, :dob, :experience, :mobile_no)
 	end
 end
