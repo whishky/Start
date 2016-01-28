@@ -29,4 +29,6 @@ class Lawyer < ActiveRecord::Base
 	def forget
 		update_attribute(:remember_digest, nil)
 	end
+
+	acts_as_mappable
 end

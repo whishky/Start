@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  get 'search' => 'users#search'
+
+  #resources :users
+  post 'users/result' => 'users#find'
+  get 'users/result' => 'users#result'
+
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'

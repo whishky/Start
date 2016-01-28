@@ -16,7 +16,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-
+#gem 'geokit-rails4' # :git => 'git@github.com:dealtech/geokit-rails3.git'
+gem 'geokit'
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer'
 gem 'less-rails'
