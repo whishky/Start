@@ -1,0 +1,27 @@
+<h1>Result</h1>
+
+
+<% if false %>
+<p>
+Query_String: 
+<% if @location.nil? %>
+	<p> Null </p>
+<% else %>
+	<% @location.each do |key, val| %>
+		<%= val%>	
+	<%end%>
+<%end%>
+<%end%>
+
+<% @results.each do |f| %>
+	<p> Name: </p>
+	<%= f.name %>
+
+	<p> Qualification: </p>
+	<%= f.qualification %>
+
+	<p> Experience: </p>
+	<%= f.experience %>
+<%end%>
+
+</p>
